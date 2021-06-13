@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MusicConsultant</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+  <header>
+    <div class="topnav">
+      <a href="/">Home</a>
+      <a class="active" href="/MyConsultant">My Consultant</a>
+      <a href="/stats">Statistics</a>
+      <a href="/about">About</a>
+    </div>
+  </header>
+	<h1>My <mark class="green">Consultant</mark></h1>
+  <h2>Here is what we got</h2>
+  <p>Sentiment Score:{{senitmentscore}}</p>
+  <p class="descr">Sentiment Score ranges from -1 to 1, with -1 being related to most negative emotions and 1 being most positive emotions</p>
+
+  <p>Here are your individual emotion scores:
+    <table id=userstats>
+      <tr>
+        <th>Emotion</th>
+        <th>Score</th>
+      </tr>
+      <tr>
+        <td>Sadness</td>
+        <td>{{ emotions[0]}}</td>
+      </tr>
+      <tr>
+        <td>Joy</td>
+        <td>{{ emotions[1]}}</td>
+      </tr>
+      <tr>
+        <td>Fear</td>
+        <td>{{ emotions[2]}}</td>
+      </tr>
+      <tr>
+        <td>Disgust</td>
+        <td>{{ emotions[3]}}</td>
+      </tr>
+      <tr>
+        <td>Anger</td>
+        <td>{{ emotions[4]}}</td>
+      </tr>
+    </table>
+  </p>
+  <p>Here are the words contributing most to each emotion:
+    <table id=userstats>
+      <tr>
+        <th>Emotion</th>
+        <th>Highest Contributer</th>
+        <th>Score</th>
+      </tr>
+      <tr>
+        <td>Sadness</td>
+        <td>{{ highest_emotions_word[0][0]}}</td>
+        <td>{{ highest_emotions_word[0][1]}}</td>
+      </tr>
+      <tr>
+        <td>Joy</td>
+        <td>{{ highest_emotions_word[1][0]}}</td>
+        <td>{{ highest_emotions_word[1][1]}}</td>
+      </tr>
+      <tr>
+        <td>Fear</td>
+        <td>{{ highest_emotions_word[2][0]}}</td>
+        <td>{{ highest_emotions_word[2][1]}}</td>
+      </tr>
+      <tr>
+        <td>Disgust</td>
+        <td>{{ highest_emotions_word[3][0]}}</td>
+        <td>{{ highest_emotions_word[3][1]}}</td>
+      </tr>
+      <tr>
+        <td>Anger</td>
+        <td>{{ highest_emotions_word[4][0]}}</td>
+        <td>{{ highest_emotions_word[4][1]}}</td>
+      </tr>
+    </table>
+  </p>
+  <p>
+
+  {% if dominant_emotion == user_target_emotion %}
+    <p class="message">You hit your target <mark class="green">emotion!</mark></p>
+  {%else%}
+    <p class="message">You aimed for <mark class="green">{{user_target_emotion}}</mark> but the most dominant emotion is <mark class="green">{{dominant_emotion}}</mark></p>
+  {% endif %}
+  </p>
+  {% if user_genre == predicted_genre_user %}
+    <p class="message">You hit your target <mark class="green">genre</mark>!</p>
+  {%else%}
+    <p class="message">You aimed for <mark class="green">{{user_genre}}</mark> but your song seems to be <mark class="green">{{predicted_genre_user}}</mark>.</p>
+  {% endif %}
+  <p>Here's the score of the word contributing the most to each emotion alongside the average emotions for the song.</p>
+  <img src="static/emotions.png" alt="Chart" height="300" width="500">
+  <img src="static/tempo.png" alt="Chart" >
+  <img src="static/danceability.png" alt="Chart" >
+  <img src="static/instrumentalness.png" alt="Chart" >
+  <img src="static/speechiness.png" alt="Chart" >
+  <img src="static/energy.png" alt="Chart" >
+  <img src="static/loudness.png" alt="Chart" >
+  <img src="static/liveness.png" alt="Chart" >
+  <img src="static/acousticness.png" alt="Chart" >
+
+</body>
+</html>

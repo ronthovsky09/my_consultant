@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MusicConsultant</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+  <header>
+    <div class="topnav">
+      <a href="/">Home</a>
+      <a class="active" href="/MyConsultant">My Consultant</a>
+      <a href="/stats">Statistics</a>
+      <a href="/about">About</a>
+    </div>
+  </header>
+	<h1>My <mark class="green">Consultant</mark></h1>
+  <h2>Tell us about your song!</h2>
+  <form method="POST">
+    <p>Lyrics:</p>
+    <p><input type = "text" id = "userlyrics" name="lyrics"/></p>
+    <div>
+    <p>
+    <label for="mood">What emotions do you want to envoke:</label>
+      <select id="mood" name="mood">
+        <option value="Sadness">Sadness</option>
+        <option value="Joy">Joy</option>
+        <option value="Fear">Fear</option>
+        <option value="Disgust">Disgust</option>
+        <option value="Anger">Anger</option>
+      </select>
+    </p>
+    </div>
+    <p>What is you tempo?:</p>
+    <p><input type = "text" id = "usertempo" name="usertempo"/></p>
+    
+    <div>
+    <p>
+    <label for="genre">What genre does your music belong to?:</label>
+      <select id="genre" name="genre">
+        <option value="classical">Classical</option>
+        <option value="movies_and_broadway">Movies and Broadway</option>
+        <option value="religious">Religious</option>
+        <option value="kPop">K-Pop</option>
+        <option value="reggaeton">Reggaeton</option>
+        <option value="rap">Rap</option>
+        <option value="rock">Rock</option>
+        <option value="pop">Pop</option>
+        <option value="jazz">Jazz</option>
+        <option value="country music">Country</option>
+        <option value="folk">Folk</option>
+        <option value="rhythm_and_blues">Rhythm and Blues</option>
+        <option value="funk">Funk</option>
+        <option value="edm">EDM</option>
+      </select>
+    </p> 
+    </div>
+
+    <p>What is your speechiness score?:</p>
+    <p class="descr">The presence of spoken words in a track. The more exclusively speech-like the recording (e.g. talk show, audio book, poetry), the closer to 1.0 the attribute value. Values above 0.66 describe tracks that are probably made entirely of spoken words. Values between 0.33 and 0.66 describe tracks that may contain both music and speech, either in sections or layered, including such cases as rap music. Values below 0.33 most likely represent music and other non-speech-like tracks.</p>
+    <p><input type = "text" id = "speechiness" name="speechiness"/></p>
+
+    <p>What is the instrumentalness of your song?:</p>
+    <p class="descr">Whether a track contains no vocals. “Ooh” and “aah” sounds are treated as instrumental in this context. Rap or spoken word tracks are clearly “vocal”. The closer the instrumentalness value is to 1.0, the greater likelihood the track contains no vocal content. Values above 0.5 are intended to represent instrumental tracks, but confidence is higher as the value approaches 1.0.</p>
+    <p><input type = "text" id = "instrumentalness" name="instrumentalness"/></p>
+
+    <p>How danceable do you think the song is?:</p>
+    <p class="descr">How suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable.</p>
+    <p><input type = "text" id = "danceability" name="danceability"/></p>
+
+    <p>What about the energy levels?:</p>
+    <p class="descr">A measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy. For example, death metal has high energy, while a Bach prelude scores low on the scale. Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset rate, and general entropy.</p>
+    <p><input type = "text" id = "energy" name="energy"/></p>
+
+    <p>And the loudness?:</p>
+    <p class="descr">The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude). Values typical range between -60 and 0 db</p>
+    <p><input type = "text" id = "loudness" name="loudness"/></p>
+
+    <p>Was the music played live in front of an audience?:</p>
+    <p class="descr">The presence of an audience in the recording. Higher liveness values represent an increased probability that the track was performed live. A value above 0.8 provides strong likelihood that the track is live.</p>
+    <p><input type = "text" id = "liveness" name="liveness"/></p>
+
+    <p>What is your acousticness score?:</p>
+    <p class="descr">A confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0 represents high confidence the track is acoustic</p>
+    <p><input type = "text" id = "acousticness" name="acousticness"/></p>
+
+    <p><input type="submit"></p>
+   </form>
+
+
+</body>
+</html>

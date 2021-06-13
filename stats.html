@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MusicConsultant</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+  <header>
+    <div class="topnav">
+      <a href="/">Home</a>
+      <a href="/MyConsultant">My Consultant</a>
+      <a class="active" href="/stats">Statistics</a>
+      <a href="/about">About</a>
+    </div>
+  </header>
+	<h1>Statistics</h1>
+  <h2>Here are some of our findings</h2>
+  <h4>Trends of song properties over time:</h4>
+  <img class ="statspagebig" src="static/songtrends.png" alt="Song Trends Over Time" >
+  <h4>Pair plot</h4>
+  <img class ="statspagebig" src="static/pairplot.png" alt="Pair Plot" >
+  <h4>Correlation heatmap: Relationships between different properites</h4>
+  <img class ="statspagebig" src="static/heatmap.png" alt="Correlation Heat Map" >
+  <img class ="statspage" src="static/tempo_histogram.png" alt="Tempo Histogram" >
+  <img class ="statspage" src="static/valence_histogram.png" alt="Valence Histogram" >
+  <img class ="statspage" src="static/speechiness_histogram.png" alt="Speechiness Histogram" >
+  <img class ="statspage" src="static/sentiment_histogram.png" alt="Sentiment Histogram" >
+  <img class ="statspage" src="static/loudness_histogram.png" alt="Loudness Histogram" >
+  <img class ="statspage" src="static/liveness_histogram.png" alt="Liveness Histogram" >
+  <img class ="statspage" src="static/instrumentalness_histogram.png" alt="Instrumentalness Histogram" >
+  <img class ="statspage" src="static/energy_histogram.png" alt="Energy Histogram" >
+  <img class ="statspage" src="static/danceability_histogram.png" alt="Danceability Histogram" >
+  <img class ="statspage" src="static/acousticness_histogram.png" alt="Acousticness Histogram" >
+  <h2>Here is a sample from one of our data sets</h2>
+  {% block content %}
+  {{data | safe}}
+  {% endblock %}
+
+
+</body>
+</html>
