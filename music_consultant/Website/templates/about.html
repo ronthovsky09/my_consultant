@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MusicConsultant</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+  <header>
+    <div class="topnav">
+      <a href="/">Home</a>
+      <a href="/MyConsultant">My Consultant</a>
+      <a href="/stats">Statistics</a>
+      <a class="active" href="/about">About</a>
+    </div>
+  </header>
+  <h1>About <mark class="green">MusicConsultant</mark></h1>
+  <h4>
+  Music consultant is a platform with two major components: it provides data about music properties based on the Spotify API and allows users to input information about their song to get feedback. Users can look at trends in and common values of attributes such as the danceability, tempo, energy, etc. of songs. They can also enter the attributes of their song into the platform to get insight and predictions on whether or not they reach their target emotion and genre, and how they stand among popular songs.
+  </h4>
+  <p>
+  Users need to enter ALL of the following attributes:
+  <ul class="desrc"><mark class="green">Lyrics:</mark> The lyrics of your song</ul>
+  <ul class="desrc"><mark class="green">Target Emotion:</mark> What do you want your listeners to feel?</ul>
+  <ul class="desrc"><mark class="green">Acousticness:</mark> A confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0 represents high confidence the track is acoustic.</ul>
+  <ul class="desrc"><mark class="green">Danceability:</mark> How suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable.</ul>
+  <ul class="desrc"><mark class="green">Energy:</mark> A measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy. For example, death metal has high energy, while a Bach prelude scores low on the scale. Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset rate, and general entropy.</ul>
+  <ul class="desrc"><mark class="green">Loudness:</mark> The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude). Values typical range between -60 and 0 db</ul>
+  <ul class="desrc"><mark class="green">Instrumentalness:</mark> Whether a track contains no vocals. “Ooh” and “aah” sounds are treated as instrumental in this context. Rap or spoken word tracks are clearly “vocal”. The closer the instrumentalness value is to 1.0, the greater likelihood the track contains no vocal content. Values above 0.5 are intended to represent instrumental tracks, but confidence is higher as the value approaches 1.0.</ul>
+  <ul class="desrc"><mark class="green">Liveness:</mark> The presence of an audience in the recording. Higher liveness values represent an increased probability that the track was performed live. A value above 0.8 provides strong likelihood that the track is live.</ul>
+  <ul class="desrc"><mark class="green">Speechiness:</mark> The presence of spoken words in a track. The more exclusively speech-like the recording (e.g. talk show, audio book, poetry), the closer to 1.0 the attribute value. Values above 0.66 describe tracks that are probably made entirely of spoken words. Values between 0.33 and 0.66 describe tracks that may contain both music and speech, either in sections or layered, including such cases as rap music. Values below 0.33 most likely represent music and other non-speech-like tracks.</ul>
+  </p>
+  
+
+</body>
+</html>
