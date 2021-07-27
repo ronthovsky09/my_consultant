@@ -1,0 +1,44 @@
+---
+title: "Data Product Assignment 3"
+author: "Matthew Tung"
+date: "7/25/2021"
+output:
+  slidy_presentation: default
+  ioslides_presentation: default
+  beamer_presentation: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Packages Loaded
+
+```{r, echo = TRUE, eval = FALSE}
+#Required Packages
+library('devtools')
+install_github("abresler/nbastatR")
+```
+Looking at NBA Stats in the 2020 Season. 
+
+## Backend Code
+```{r, eval=TRUE, echo = TRUE, warning = FALSE, comment= FALSE,message = FALSE}
+library("nbastatR")
+library(plotly)
+players2020<-bref_players_stats(seasons = 2020, tables = c("per_game", "per_poss"))
+fig <- plot_ly()
+fig <- fig %>%
+    add_trace(
+        type = "scatter",
+        x = players2020$pctFT, 
+        y = players2020$pctFG3,
+        color = players2020$groupPosition,
+        size = players2020$fg3aPerGame,
+        text = players2020$namePlayer,
+        hovertemplate=paste('Player: %{text}', 
+                            '<br>FT Pct: %{x}<br>', 
+                            '3PT Pct: %{y}')
+    )
+fig
+```
+
